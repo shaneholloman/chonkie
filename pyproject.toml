@@ -143,6 +143,8 @@ all = [
     "chonkie[cli]",
     "chonkie[api]",
     "chonkie[table]",
+    "chonkie[tokenizers]",
+    "chonkie[tiktoken]",
     "chonkie[code]",
     "chonkie[neural]",
     "chonkie[model2vec]",
