@@ -700,6 +700,7 @@ dependencies = [
     { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "numpy", version = "2.4.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "tenacity" },
+    { name = "tokie" },
     { name = "tqdm" },
 ]
 
@@ -998,8 +999,6 @@ requires-dist = [
     { name = "chonkie", extras = ["st"], marker = "extra == 'all'" },
     { name = "chonkie", extras = ["table"], marker = "extra == 'all'" },
     { name = "chonkie", extras = ["teraflopai"], marker = "extra == 'all'" },
-    { name = "chonkie", extras = ["tiktoken"], marker = "extra == 'all'" },
-    { name = "chonkie", extras = ["tokenizers"], marker = "extra == 'all'" },
     { name = "chonkie", extras = ["tpuf"], marker = "extra == 'all'" },
     { name = "chonkie", extras = ["viz"], marker = "extra == 'all'" },
     { name = "chonkie", extras = ["voyageai"], marker = "extra == 'all'" },
@@ -1069,6 +1068,7 @@ requires-dist = [
     { name = "tokenizers", marker = "extra == 'st'", specifier = ">=0.16.0" },
     { name = "tokenizers", marker = "extra == 'tokenizers'", specifier = ">=0.16.0" },
     { name = "tokenizers", marker = "extra == 'voyageai'", specifier = ">=0.16.0" },
+    { name = "tokie", specifier = ">=0.0.9" },
     { name = "torch", marker = "extra == 'neural'", specifier = ">=2.0.0,<3.0" },
     { name = "tqdm", specifier = ">=4.64.0" },
     { name = "transformers", marker = "extra == 'dev'", specifier = ">=4.0.0" },
@@ -4996,11 +4996,11 @@ wheels = [
 
 [[package]]
 name = "pytz"
-version = "2026.1.post1"
+version = "2026.2"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/56/db/b8721d71d945e6a8ac63c0fc900b2067181dbb50805958d4d4661cf7d277/pytz-2026.1.post1.tar.gz", hash = "sha256:3378dde6a0c3d26719182142c56e60c7f9af7e968076f31aae569d72a0358ee1", size = 321088, upload-time = "2026-03-03T07:47:50.683Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ff/46/dd499ec9038423421951e4fad73051febaa13d2df82b4064f87af8b8c0c3/pytz-2026.2.tar.gz", hash = "sha256:0e60b47b29f21574376f218fe21abc009894a2321ea16c6754f3cad6eb7cdd6a", size = 320861, upload-time = "2026-05-04T01:35:29.667Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/10/99/781fe0c827be2742bcc775efefccb3b048a3a9c6ce9aec0cbf4a101677e5/pytz-2026.1.post1-py2.py3-none-any.whl", hash = "sha256:f2fd16142fda348286a75e1a524be810bb05d444e5a081f37f7affc635035f7a", size = 510489, upload-time = "2026-03-03T07:47:49.167Z" },
+    { url = "https://files.pythonhosted.org/packages/ec/dd/96da98f892250475bdf2328112d7468abdd4acc7b902b6af23f4ed958ea0/pytz-2026.2-py2.py3-none-any.whl", hash = "sha256:04156e608bee23d3792fd45c94ae47fae1036688e75032eea2e3bf0323d1f126", size = 510141, upload-time = "2026-05-04T01:35:27.408Z" },
 ]
 
 [[package]]
@@ -6012,6 +6012,34 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/46/cd/e4851401f3d8f6f45d8480262ab6a5c8cb9c4302a790a35aa14eeed6d2fd/tokenizers-0.22.2-pp310-pypy310_pp73-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:e10bf9113d209be7cd046d40fbabbaf3278ff6d18eb4da4c500443185dc1896c", size = 3161308, upload-time = "2026-01-05T10:40:40.737Z" },
     { url = "https://files.pythonhosted.org/packages/6f/6e/55553992a89982cd12d4a66dddb5e02126c58677ea3931efcbe601d419db/tokenizers-0.22.2-pp310-pypy310_pp73-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:64d94e84f6660764e64e7e0b22baa72f6cd942279fdbb21d46abd70d179f0195", size = 3718964, upload-time = "2026-01-05T10:40:46.56Z" },
     { url = "https://files.pythonhosted.org/packages/59/8c/b1c87148aa15e099243ec9f0cf9d0e970cc2234c3257d558c25a2c5304e6/tokenizers-0.22.2-pp310-pypy310_pp73-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:f01a9c019878532f98927d2bacb79bbb404b43d3437455522a00a30718cdedb5", size = 3373542, upload-time = "2026-01-05T10:40:52.803Z" },
+]
+
+[[package]]
+name = "tokie"
+version = "0.0.9"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/95/3c/f76865a207ca5fdac17842ddcd5ca4b27699c81cb8424b3290d9b3603970/tokie-0.0.9.tar.gz", hash = "sha256:b2439850258890d7ecf1e21aeeebe06d8ae81879b8349959438da2841fe6553c", size = 135349, upload-time = "2026-05-05T18:21:49.305Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ba/bf/095b8255125fb4fcdc10a3668fb584e627c0993e861ecf413c5b559a8520/tokie-0.0.9-cp310-cp310-macosx_10_12_x86_64.whl", hash = "sha256:e4e3b24ccfdb9e41099d4f94a8b8ef373387b8ef2ecd1371260fdec52b7d0984", size = 2553208, upload-time = "2026-05-05T18:21:18.335Z" },
+    { url = "https://files.pythonhosted.org/packages/80/cf/eb30ba2187a27dd36b508a52e9e074acb38af5acbf67ef56ee754a201309/tokie-0.0.9-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:0eee574009dc82a49a6cbb3dc4e28001b8d5c1f1360782f4886108503e8b59d9", size = 2466583, upload-time = "2026-05-05T18:21:20.305Z" },
+    { url = "https://files.pythonhosted.org/packages/34/ca/8a536fe6469cdba42238ea0e1d32e0208dfb0de1c2b7f3537e55e8938ddb/tokie-0.0.9-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:004382c9fdc82bee94423fae26d0e6623c16def5d37911fbf29c066e91688a67", size = 2769179, upload-time = "2026-05-05T18:21:21.983Z" },
+    { url = "https://files.pythonhosted.org/packages/59/77/48e2241f6b3b82e6ce13a76de9f319623dfdd81385716396990cd0376112/tokie-0.0.9-cp310-cp310-manylinux_2_28_aarch64.whl", hash = "sha256:04d73a972aaac4fcd2caa1ffcdedc7814ce6ae4f01e218398d45178ca0135f50", size = 2732479, upload-time = "2026-05-05T18:21:23.368Z" },
+    { url = "https://files.pythonhosted.org/packages/bc/d2/2546912e5dc8c5405b44baf7fbaf617abec87bbe2f5503149cf3cb87dcc0/tokie-0.0.9-cp310-cp310-win_amd64.whl", hash = "sha256:92fcc91d5013a6e8d048545f0f4433fac88d9b6de61f5656a95167ec2dd6de39", size = 2309986, upload-time = "2026-05-05T18:21:24.596Z" },
+    { url = "https://files.pythonhosted.org/packages/a5/c5/705ffd2f2dacfc78340660c40cad1561fd36f02cabf9e545090b23577a91/tokie-0.0.9-cp311-cp311-macosx_10_12_x86_64.whl", hash = "sha256:15f3f413921d59f70ea605c93279ca578a4c49f058824aadfb57a756cf912a6b", size = 2553383, upload-time = "2026-05-05T18:21:26.489Z" },
+    { url = "https://files.pythonhosted.org/packages/5f/8b/fc17d1bce38325c7b10e6c8c19cceea24c6446adba7b2cad74d2fe9fd1bf/tokie-0.0.9-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:abb5332d2b93843fa3c59383a1c3436efb2681d09bda55f24a16c5fdfa7cce99", size = 2466408, upload-time = "2026-05-05T18:21:28.263Z" },
+    { url = "https://files.pythonhosted.org/packages/47/1a/003d601df91fabf454d108c5068272964deb7fe8f592a4577d4ed1fe9658/tokie-0.0.9-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2be6b136796ae8066a6ef666c4b2f8bd29729353c30388f236a2c1950ea7bfc7", size = 2769237, upload-time = "2026-05-05T18:21:29.585Z" },
+    { url = "https://files.pythonhosted.org/packages/52/e7/277beba1adbdeebbd332e105ebdaebb42bdbef5270fcaa1cbc5077b2efd5/tokie-0.0.9-cp311-cp311-manylinux_2_28_aarch64.whl", hash = "sha256:5fc3ca15b34ff0c08a775c2d3a62d3bab7b753a05c241a6e7065785b9afd679e", size = 2732680, upload-time = "2026-05-05T18:21:31.095Z" },
+    { url = "https://files.pythonhosted.org/packages/f2/24/4ee4e883ee8686819fbfd7a6c129a5071dbbdd50944ba670dfe872c4b9e1/tokie-0.0.9-cp311-cp311-win_amd64.whl", hash = "sha256:1e6f46a5b1abd136a52edc5078c2dedafb65c16cd38dadd1908259e11d2530ea", size = 2310041, upload-time = "2026-05-05T18:21:32.722Z" },
+    { url = "https://files.pythonhosted.org/packages/2e/29/6cd8e4954c6b014a839447289150ee60c7d0d706681fffe97076c28943c4/tokie-0.0.9-cp312-cp312-macosx_10_12_x86_64.whl", hash = "sha256:ee7ad68173f3b874ba967df9cbe20203461df9a60624076595320daeab53c269", size = 2549471, upload-time = "2026-05-05T18:21:34.038Z" },
+    { url = "https://files.pythonhosted.org/packages/8d/3d/9d1a64d72a6de089fda06eb0728c911ce63444d113195d0c425d9170abe3/tokie-0.0.9-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:a725368781e9b008de7347f56a6f24cb4a6d4df5705f328d764f70a55b9c74ff", size = 2463192, upload-time = "2026-05-05T18:21:35.606Z" },
+    { url = "https://files.pythonhosted.org/packages/53/8b/2dbef40651425d212e01ff611eaba8c5e8308b4647fc57f184f6944411b9/tokie-0.0.9-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6ab65bdbb40ffa0f54858779418fcd440b79ebfe2c13f18abb7a1b767ca94ccc", size = 2768954, upload-time = "2026-05-05T18:21:37.174Z" },
+    { url = "https://files.pythonhosted.org/packages/09/1d/c14ae0bc273cd47c06184a2c4bd7fb330023058f9e7b54545bbf092b0ce5/tokie-0.0.9-cp312-cp312-manylinux_2_28_aarch64.whl", hash = "sha256:d46323296393e91c65a4ec61b688d5b070e33607bb6926523f8c7a16e576713a", size = 2731647, upload-time = "2026-05-05T18:21:38.472Z" },
+    { url = "https://files.pythonhosted.org/packages/51/10/baa5bdcdec0a47b8db4f7100ff41e2eacb011c5b817278f7ae516bac0c42/tokie-0.0.9-cp312-cp312-win_amd64.whl", hash = "sha256:c5f6cffcabd2c3838bc39ba08b834a5dfea1b5f73f223dcfadc7009bb5390d53", size = 2309825, upload-time = "2026-05-05T18:21:39.962Z" },
+    { url = "https://files.pythonhosted.org/packages/82/b1/34b25481911b615d153908caac1ec176069a260b6ef641c3a5bd27d52603/tokie-0.0.9-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:0790332b1cd8e038139c4b0e5b3b3ef7f967ebef72c4a8cf3c3d74610b1aa0ff", size = 2549416, upload-time = "2026-05-05T18:21:41.617Z" },
+    { url = "https://files.pythonhosted.org/packages/c6/04/3e54aa54d341118667d57219817108bf067841cde8ba39222d096eae8db4/tokie-0.0.9-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:878231bfa22c466fb011146fdd03d347a733faae69fef0a0b697ac03a8f47628", size = 2463438, upload-time = "2026-05-05T18:21:43.332Z" },
+    { url = "https://files.pythonhosted.org/packages/c6/ad/2c8f7f47c41356400dbb4e37bdf05297feea49fdaa732877973f9f3f7557/tokie-0.0.9-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:00bfef25ec782a729aeb2db9fa54e57ed492f0898662f123ba89c3b24614985a", size = 2768664, upload-time = "2026-05-05T18:21:45.179Z" },
+    { url = "https://files.pythonhosted.org/packages/fb/a7/6c3e8af745fe2f963b15f4f7049138e018d98e9814c8907550ee616b1ef9/tokie-0.0.9-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:7dfb5d6023585ff18b0f1e2d00e4cd37f872c0055c3d6f3b7b8bf550647c7b7b", size = 2731266, upload-time = "2026-05-05T18:21:46.655Z" },
+    { url = "https://files.pythonhosted.org/packages/d0/96/85580cd16e5e97486ad53e8227b3acb10327d68bb8b38a64b405719b5601/tokie-0.0.9-cp313-cp313-win_amd64.whl", hash = "sha256:559d16d6f6898aa1cea5a8be329e5f1654c889d0f25d9652d98c3f88ccf7aca9", size = 2309372, upload-time = "2026-05-05T18:21:48.022Z" },
 ]
 
 [[package]]
