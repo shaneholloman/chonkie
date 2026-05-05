@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 logger = get_logger(__name__)
 
 _TIKTOKEN_TO_TOKIE_MAPPING = {
-    "cl100k_base": "xenova/gpt-4",
-    "o200k_base": "xenova/gpt-4o",
+    "cl100k_base": "Xenova/gpt-4",
+    "o200k_base": "Xenova/gpt-4o",
     "p50k_base": "Xenova/text-davinci-003",
     "gpt2": "openai-community/gpt2",
 }
