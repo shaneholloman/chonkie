@@ -38,9 +38,14 @@ def _detect_language_by_parsing(text: str) -> str | None:
     for lang in languages:
         try:
             config = ProcessConfig(language=lang, structure=True, imports=True)
-            result = process(text, config)
+            result = process(text, config)  # ty: ignore[invalid-argument-type]
             structure_score = len(result.structure) + len(result.imports)
-            results.append((lang, result.metrics.error_count, structure_score, result.metrics.node_count))
+            results.append((
+                lang,
+                result.metrics.error_count,
+                structure_score,
+                result.metrics.node_count,
+            ))
         except Exception:
             continue
 
@@ -95,7 +100,10 @@ class CodeChunker(BaseChunker):
                 "Consider setting the `language` parameter to a specific language to improve performance.",
             )
         else:
-            from tree_sitter_language_pack import has_language
+            from tree_sitter_language_pack import download, has_language
+
+            if not has_language(language):
+                download([language])
 
             if not has_language(language):
                 raise ValueError(
@@ -124,8 +132,7 @@ class CodeChunker(BaseChunker):
             return language
 
         raise ValueError(
-            "Could not auto-detect the language. "
-            "Please specify a language explicitly."
+            "Could not auto-detect the language. Please specify a language explicitly."
         )
 
     def _estimate_chunk_max_bytes(self, text: str) -> int:
@@ -143,8 +150,8 @@ class CodeChunker(BaseChunker):
 
         chunk_max_bytes = self._estimate_chunk_max_bytes(text)
         config = ProcessConfig(language=language, chunk_max_size=chunk_max_bytes)
-        result = process(text, config)
-        return result.chunks
+        result = process(text, config)  # ty: ignore[invalid-argument-type]
+        return result.chunks  # ty: ignore[invalid-return-type]
 
     def _create_chunks_from_code_chunks(
         self, code_chunks: list["CodeChunk"], offset: int = 0
