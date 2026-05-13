@@ -46,7 +46,8 @@ def _detect_language_by_parsing(text: str) -> str | None:
                 structure_score,
                 result.metrics.node_count,
             ))
-        except Exception:
+        except Exception as e:
+            logger.debug(f"Failed to parse with language '{lang}': {e}")
             continue
 
     if not results:
