@@ -56,7 +56,7 @@ def test_code_chunker_initialization() -> None:
     """Test CodeChunker initialization."""
     chunker = CodeChunker(language="python", chunk_size=128)
     assert chunker.chunk_size == 128
-    assert chunker.parser is not None
+    assert chunker.language == "python"
 
 
 def test_code_chunker_chunking_python(python_code: str) -> None:
