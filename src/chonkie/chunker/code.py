@@ -115,6 +115,7 @@ class CodeChunker(BaseChunker):
             )
         else:
             from tree_sitter_language_pack import download, has_language
+
             # backward compatibility: if the language is not downloaded yet
             # since this is recently made we can get rid of this block in the future
             if not has_language(language):
