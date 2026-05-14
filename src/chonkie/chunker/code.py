@@ -95,6 +95,19 @@ class CodeChunker(BaseChunker):
         self.include_nodes = include_nodes
 
         self.language = language
+
+        # download tree_sitter_languages for first time when we use the chunker
+        from tree_sitter_language_pack import download_all, downloaded_languages
+
+        num_languages = len(downloaded_languages())
+        # in version 1.6.6, when we ran the tests we downloaded 19 languages
+        # this will download the rest of them for all onward versions
+        # but it won't redownload for users who already have 19 or more languages downloaded
+        if num_languages <= 19:
+            logger.info("Downloading tree-sitter languages for the first time...")
+            download_all()
+
+        # load the language
         if language == "auto":
             logger.warning(
                 "The language is set to `auto`. This would adversely affect the performance of the chunker. "
@@ -103,6 +116,8 @@ class CodeChunker(BaseChunker):
         else:
             from tree_sitter_language_pack import download, has_language
 
+            # backward compatibility: if the language is not downloaded yet
+            # since this is recently made we can get rid of this block in the future
             if not has_language(language):
                 download([language])
 
