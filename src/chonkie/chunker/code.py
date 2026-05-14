@@ -103,7 +103,7 @@ class CodeChunker(BaseChunker):
         # in version 1.6.6, when we ran the tests we downloaded 19 languages
         # this will download the rest of them for all onward versions
         # but it won't redownload for users who already have 19 or more languages downloaded
-        if num_languages < 19:
+        if num_languages <= 19:
             logger.info("Downloading tree-sitter languages for the first time...")
             download_all()
 
